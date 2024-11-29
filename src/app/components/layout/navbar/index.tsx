@@ -3,11 +3,12 @@ import { Menu } from "@/app/lib/shopify/types";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
+import Logo from "../../icons/logo";
+import LogoSquare from "../../logo-square";
 
 export async function Navbar() {
     const menu = await getMenu("nextjs-frontend-menu");
 
-    console.log(menu);
     return (
         <nav className="flex items-center justify-between p-4 lg:px-6">
             <div className="block flex-none md:hidden">
@@ -20,9 +21,9 @@ export async function Navbar() {
                         prefetch={true} 
                         className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
                     >
-                        <Logo />
+                        <LogoSquare />
                         <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-                            {SITE_NAME}
+                            {process.env.SITE_NAME}
                         </div>
                     </Link>
                     {menu.length > 0 ? (
@@ -45,7 +46,7 @@ export async function Navbar() {
                     <Search />
                 </div>
                 <div className="flex justify-end md:w-1/3">
-                    <CartModal />
+                    { /*<CartModal /> */}
                 </div>
             </div>
         </nav>
