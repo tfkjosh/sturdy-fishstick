@@ -1,8 +1,7 @@
 "use client";
 import { createUrl } from "@/app/lib/utils";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { useSearchParams } from "next/navigation"
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation"
 
 export default function Search() {
     const router = useRouter();
