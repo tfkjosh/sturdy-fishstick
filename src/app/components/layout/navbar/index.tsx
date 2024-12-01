@@ -3,7 +3,6 @@ import { Menu } from "@/app/lib/shopify/types";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
-import Logo from "../../icons/logo";
 import LogoSquare from "../../logo-square";
 
 export async function Navbar() {
@@ -22,10 +21,11 @@ export async function Navbar() {
                         className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
                     >
                         <LogoSquare />
-                        <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+                        {/*<div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
                             {process.env.SITE_NAME}
-                        </div>
+                        </div> */}
                     </Link>
+                    
                     {menu.length > 0 ? (
                         <ul className="hidden gap-6 text-sm md:flex md:items-center">
                             {menu.map((item: Menu) => (

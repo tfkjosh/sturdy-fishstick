@@ -89,7 +89,7 @@ export default function Home() {
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Women\&apos;s Collection
+                  Women&apos;s Collection
                 </h3>
               </Link>
             </div>
@@ -107,7 +107,7 @@ export default function Home() {
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Men\&apos;s Collection
+                  Men&apos;s Collection
                 </h3>
               </Link>
             </div>
@@ -121,7 +121,7 @@ export default function Home() {
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Kids\&apos;s Collection
+                  Kids&apos;s Collection
                 </h3>
               </Link>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Sale\&apos;s Collection
+                  Sale&apos;s Collection
                 </h3>
               </Link>
             </div>
