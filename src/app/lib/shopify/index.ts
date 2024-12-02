@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { Menu, ShopifyMenuOperation } from "./types";
+import { Menu, Product, ShopifyMenuOperation, ShopifyProductsOperation } from "./types";
 import { getMenuQuery } from "./queries/menu";
 import { SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from "../constants";
 import { ensureStartWith } from "../utils";
@@ -91,4 +91,24 @@ export async function getMenu(handle: string): Promise<Menu[]> {
             .replace("/pages", ""),
         })) || []
     );
+}
+
+export async function getProducts({
+    query, 
+    reverse, 
+    sortKey
+}: {
+    query?: string; 
+    reverse?: boolean;
+    sortKey?: string;
+}): Promise<Product[]> {
+    const res = await shopifyFetch<ShopifyProductsOperation> ({
+        query: getProductQuery,
+        tags: [TAGS.products],
+        variables: {
+            query,
+            reverse,
+            sortKey,
+        }
+    });
 }
