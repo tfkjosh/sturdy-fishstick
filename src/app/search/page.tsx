@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { defaultSort, sorting } from "../lib/constants";
+import { getProducts } from "../lib/shopify";
 
 export async function SearchPage({
     searchParams,
