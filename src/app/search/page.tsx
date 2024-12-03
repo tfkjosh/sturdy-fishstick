@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { defaultSort, sorting } from "../lib/constants";
 import { getProducts } from "../lib/shopify";
+import Grid from "../components/grid";
+import ProductGridItems from "../components/layout/product-grid-items";
 
 export async function SearchPage({
     searchParams,
