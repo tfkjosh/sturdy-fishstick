@@ -46,4 +46,6 @@ export const sorting: SortFilterItem[] = [
         sortKey: 'PRICE', 
         reverse: true,
     }
-]
+];
+
+export const HIDDEN_PRODUCT_TAG = "nextjs-frontend-hidden";
