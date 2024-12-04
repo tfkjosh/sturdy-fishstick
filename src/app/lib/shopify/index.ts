@@ -1,9 +1,11 @@
 import { headers } from "next/headers";
 import { 
+    Collection,
     Connection, 
     Image, 
     Menu, 
     Product, 
+    ShopifyCollectionsOperation, 
     ShopifyMenuOperation, 
     ShopifyProduct, 
     ShopifyProductsOperation 
@@ -13,6 +15,7 @@ import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from "../const
 import { ensureStartWith } from "../utils";
 import { isShopifyError } from "../type-guards";
 import { getProductQuery } from "./queries/products";
+import { getCollectionsQuery } from "./queries/collections";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
     ? ensureStartWith(process.env.SHOPIFY_STORE_DOMAIN, "https://") 
@@ -174,4 +177,29 @@ export async function getProducts({
     });
 
     return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
+}
+
+export async function getCollections(): Promise<Collection[]> {
+    const res = await shopifyFetch<ShopifyCollectionsOperation>({
+        query: getCollectionsQuery,
+        tags: [TAGS.collections]
+    });
+
+    const ShopifyCollections = removeEdgesAndNodes(res?.body?.data?.collections);
+    const collections = [
+        {
+            handle: '',
+            title: 'All',
+            description: 'All products',
+            seo: {
+                title: 'All',
+                description: 'All products'
+            },
+            path: '/search',
+            updatedAt: new Date().toISOString(),
+        },
+        // Filter out the hidden products
+        ...reshapeCollections(ShopifyCollections).filter(
+            (collection) => !collection.handle.startsWith("hidden"))
+    ]
 }
