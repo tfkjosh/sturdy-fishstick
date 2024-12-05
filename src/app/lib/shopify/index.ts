@@ -1,10 +1,10 @@
-import { headers } from "next/headers";
 import { 
     Collection,
     Connection, 
     Image, 
     Menu, 
     Product, 
+    ShopifyCollection, 
     ShopifyCollectionsOperation, 
     ShopifyMenuOperation, 
     ShopifyProduct, 
@@ -179,6 +179,33 @@ export async function getProducts({
     return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
 }
 
+function reshapeCollection(
+    collection: ShopifyCollection
+): Collection | undefined {
+    if(!collection) return undefined;
+
+    return {
+        ...collection,
+        path: `/search/${collection.handle}`
+    };
+}
+
+function reshapeCollections(collections: ShopifyCollection[]) {
+    const reshapedCollections = [];
+
+    for (const collection of collections) {
+        if(collection) {
+            const reshapedCollection = reshapeCollection(collection);
+
+            if(reshapedCollection) {
+                reshapedCollections.push(reshapedCollection);
+            }
+        }
+    }
+
+    return reshapedCollections;
+}
+
 export async function getCollections(): Promise<Collection[]> {
     const res = await shopifyFetch<ShopifyCollectionsOperation>({
         query: getCollectionsQuery,
@@ -188,18 +215,21 @@ export async function getCollections(): Promise<Collection[]> {
     const ShopifyCollections = removeEdgesAndNodes(res?.body?.data?.collections);
     const collections = [
         {
-            handle: '',
-            title: 'All',
-            description: 'All products',
+            handle: "",
+            title: "All",
+            description: "All products",
             seo: {
-                title: 'All',
-                description: 'All products'
+                title: "All",
+                description: "All products"
             },
-            path: '/search',
+            path: "/search",
             updatedAt: new Date().toISOString(),
         },
         // Filter out the hidden products
         ...reshapeCollections(ShopifyCollections).filter(
-            (collection) => !collection.handle.startsWith("hidden"))
-    ]
+            (collection) => !collection.handle.startsWith("hidden")
+        ),
+    ];
+
+    return collections;
 }
