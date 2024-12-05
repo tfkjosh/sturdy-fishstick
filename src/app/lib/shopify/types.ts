@@ -1,66 +1,64 @@
 export type Menu = {
-    title: string,
-    path: string,
-
-};
-
-export type ShopifyMenuOperation = {
+    title: string;
+    path: string;
+  };
+  
+  export type ShopifyMenuOperation = {
     data: {
-        menu?: {
-            items: {
-                title: string,
-                url: string;
-            }[];
-        };
+      menu?: {
+        items: {
+          title: string;
+          url: string;
+        }[];
+      };
     };
     variables: {
-        handle: string;
+      handle: string;
     };
-};
-
-export type Money = {
+  };
+  
+  export type Money = {
     amount: string;
     currencyCode: string;
-};
-
-export type ProductOption = {
-    id: string,
-    name: string,
+  };
+  
+  export type ProductOption = {
+    id: string;
+    name: string;
     values: string[];
-};
-
-export type Edge<T> = {
+  };
+  
+  export type Edge<T> = {
     node: T;
-}
-
-export type Connection<T> = {
+  };
+  
+  export type Connection<T> = {
     edges: Array<Edge<T>>;
-};
-
-export type ProductVariant = {
+  };
+  
+  export type ProductVariant = {
     id: string;
     title: string;
     availableForSale: boolean;
     selectedOptions: {
-        name: string;
-        value: string;
+      name: string;
+      value: string;
     }[];
     price: Money;
-};
-
-export type Image = {
+  };
+  
+  export type Image = {
     url: string;
     altText: string;
     width: number;
     height: number;
-};
-
-export type SEO = {
-    title: string,
+  };
+  
+  export type SEO = {
+    title: string;
     description: string;
-};
-
-export type ShopifyProduct = {
+  };
+  export type ShopifyProduct = {
     id: string;
     handle: string;
     availableForSale: boolean;
@@ -69,8 +67,8 @@ export type ShopifyProduct = {
     descriptionHtml: string;
     options: ProductOption[];
     priceRange: {
-        maxVariantPrice: Money;
-        minVariantPrice: Money;
+      maxVariantPrice: Money;
+      minVariantPrice: Money;
     };
     variants: Connection<ProductVariant>;
     featuredImage: Image;
@@ -78,40 +76,38 @@ export type ShopifyProduct = {
     seo: SEO;
     tags: string[];
     updatedAt: string;
-};
-
-export type Product = Omit<ShopifyProduct, 'variants' | 'images'> & {
-    variants: ProductVariant[],
+  };
+  
+  export type Product = Omit<ShopifyProduct, "variants" | "images"> & {
+    variants: ProductVariant[];
     images: Image[];
-};
-
-export type ShopifyProductsOperation = {
+  };
+  
+  export type ShopifyProductsOperation = {
     data: {
-        products: Connection<ShopifyProduct>;
+      products: Connection<ShopifyProduct>;
     };
     variables: {
-        query?: string;
-        reverse?: boolean;
-        sortKey?: string;
-    }
-};
-
-export type ShopifyCollection = {
+      query?: string;
+      reverse?: boolean;
+      sortKey?: string;
+    };
+  };
+  
+  export type ShopifyCollection = {
     handle: string;
     title: string;
     description: string;
     seo: SEO;
-    updateAt: string;
-
-}
-
-export type Collection = ShopifyCollection & {
+    updatedAt: string;
+  };
+  
+  export type Collection = ShopifyCollection & {
     path: string;
-
-}
-
-export type ShopifyCollectionsOperation = {
+  };
+  
+  export type ShopifyCollectionsOperation = {
     data: {
-        collections: Connection<ShopifyCollection>
-    }
-}
+      collections: Connection<ShopifyCollection>;
+    };
+  };

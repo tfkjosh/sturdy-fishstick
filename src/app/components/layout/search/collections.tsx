@@ -1,7 +1,10 @@
+import { getCollections } from "@/app/lib/shopify";
+import FilterList from "./filter";
+
 async function CollectionList() {
     const Collections = await getCollections();
 
-    return <FilterList />
+    return <FilterList list={collections} title="Collections" />
 }
 
 const skeleton = "mb-3 h-4 w-5/6 animate-pulse rounded";
