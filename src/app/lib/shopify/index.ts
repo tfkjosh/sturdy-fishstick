@@ -9,6 +9,7 @@ import {
     ShopifyCollectionsOperation, 
     ShopifyMenuOperation, 
     ShopifyProduct, 
+    ShopifyProductOperation, 
     ShopifyProductsOperation 
 } from "./types";
 import { getMenuQuery } from "./queries/menu";
@@ -235,7 +236,11 @@ export async function getCollections(): Promise<Collection[]> {
     return collections;
 }
 
-export async function getCollectionProducts({collection, reverse, sortKey}: {
+export async function getCollectionProducts({
+    collection, 
+    reverse, 
+    sortKey
+}: {
     collection: string;
     reverse?: boolean;
     sortKey?: string;
@@ -246,7 +251,7 @@ export async function getCollectionProducts({collection, reverse, sortKey}: {
     variables: {
         handle: collection,
         reverse,
-        sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey
+        sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
     }
   });
   
@@ -254,6 +259,20 @@ export async function getCollectionProducts({collection, reverse, sortKey}: {
     console.log(`No collection found for \`${collection}\``);
     return [];
   }
+  
+  return reshapeProducts(
+        removeEdgesAndNodes(res.body.data.collection.products)
+    );
+}
 
-  return reshapeProducts(removeEdgesAndNodes(res.body.data.collection.products));
+export async function getProduct(handle:string): Promise<Product | undefined> {
+    const res = await shopifyFetch<ShopifyProductOperation>({
+        query: getProductQuery,
+        tags: [TAGS.products],
+        variables: {
+            handle,
+        },
+    });
+
+    return reshapeProduct(res.body.data.product, false);
 }
