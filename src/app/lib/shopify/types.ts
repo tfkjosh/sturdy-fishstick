@@ -124,3 +124,12 @@ export type Menu = {
       sortKey?: string;
     };
   };
+
+  export type ShopifyProductOperation = {
+    data: {
+      product: ShopifyProduct;
+    };
+    variables: {
+      handle: string;
+    };
+  };
