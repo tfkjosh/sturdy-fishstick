@@ -4,6 +4,7 @@ import { useCart } from "./cart-context";
 import { useFormState } from "react-dom";
 import clsx from "clsx";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import { addItem } from "./actions";
 
 function SubmitButton({
     availableForSale,
@@ -28,7 +29,8 @@ function SubmitButton({
         return (
             <button
                 aria-label="Please select an option"
-                disabled className={clsx(buttonClasses, disabledClasses)}
+                disabled 
+                className={clsx(buttonClasses, disabledClasses)}
             >
                 <div className="absolute left-0 ml-4">
                     <PlusIcon className="h-5" />
@@ -45,7 +47,7 @@ function SubmitButton({
             "hover:opacity-90": true,
             })}
         >
-            <div>
+            <div className="absolute left-0 ml-4">
                 <PlusIcon className="h-5" />
             </div>
             Add To Cart

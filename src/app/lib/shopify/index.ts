@@ -1,23 +1,28 @@
 import { 
+    Cart,
     Collection,
     Connection, 
     Image, 
     Menu, 
     Product, 
+    ShopifyAddToCartOperation, 
+    ShopifyCart, 
     ShopifyCollection, 
     ShopifyCollectionProductsOperation, 
     ShopifyCollectionsOperation, 
     ShopifyMenuOperation, 
     ShopifyProduct, 
     ShopifyProductOperation, 
+    ShopifyProductRecommendationsOperation, 
     ShopifyProductsOperation 
 } from "./types";
 import { getMenuQuery } from "./queries/menu";
 import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from "../constants";
 import { ensureStartWith } from "../utils";
 import { isShopifyError } from "../type-guards";
-import { getProductQuery } from "./queries/products";
+import { getProductQuery, getProductRecommendationsQuery } from "./queries/products";
 import { getCollectionProductsQuery, getCollectionsQuery } from "./queries/collection";
+import { addToCartMutation } from "./mutations/cart";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
     ? ensureStartWith(process.env.SHOPIFY_STORE_DOMAIN, "https://") 
@@ -276,3 +281,46 @@ export async function getProduct(handle:string): Promise<Product | undefined> {
 
     return reshapeProduct(res.body.data.product, false);
 }
+
+export async function getProductRecommendations(productId: string): Promise<Product[]> {
+    const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
+        query: getProductRecommendationsQuery,
+        tags: [TAGS.products],
+        variables: {
+            productId,
+        },
+    });
+
+    return reshapeProducts(res.body.data.productRecommendations);
+}
+
+function reshapeCart(cart: ShopifyCart): Cart {
+    if(!cart.cost?.totalTaxAmount) {
+        cart.cost.totalTaxAmount = {
+            amount: "0.0",
+            currencyCode: "USD",
+        };
+    }
+
+    return {
+        ...cart,
+        lines: removeEdgesAndNodes(cart.lines)
+    };
+}
+
+export async function addToCart(
+    cartId: string, 
+    lines: { merchandiseId: string; quantity: number}[]
+): Promise<Cart> {
+    const res = await shopifyFetch<ShopifyAddToCartOperation>({
+        query: addToCartMutation,
+        variables: {
+            cartId,
+            lines,
+        },
+        cache: "no-cache",
+    });
+
+    return reshapeCart(res.body.data.cartLinesAdd.cart)
+}
+

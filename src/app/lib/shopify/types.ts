@@ -173,3 +173,27 @@ export type Menu = {
   export type Cart = Omit<ShopifyCart, "lines"> & {
     lines: CartItem[];
 };
+
+export type ShopifyAddToCartOperation = {
+  data: {
+    cartLinesAdd: {
+      cart: ShopifyCart;
+    };
+  };
+  variables: {
+    cartId: string;
+    lines: {
+      merchandiseId: string;
+      quantity: number;
+    }[];
+  };
+};
+
+export type ShopifyProductRecommendationsOperation = {
+  data: {
+    productRecommendations: ShopifyProduct[];
+  };
+  variables: {
+    productId: string;
+  };
+};
