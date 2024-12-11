@@ -1,34 +1,34 @@
 import { collectionFragment } from "../fragments/collection";
 import { productFragment } from "../fragments/product";
 
-export const getCollectionsQuery = /* GraphQl */ `
-    query getCollections {
-        collections(first: 100, sortKey: TITLE) {
-            edges {
-                node {
-                    ...collection
-                }
-            }
+export const getCollectionsQuery = /* GraphQL */ `
+  query getCollections {
+    collections(first: 100, sortKey: TITLE) {
+      edges {
+        node {
+          ...collection
         }
+      }
     }
-    ${collectionFragment}
+  }
+  ${collectionFragment}
 `;
 
-export const getCollectionProductsQuery = /*GraphQl */ `
-    query getCollectionProducts(
-        $handle: String!
-        $sortKey: ProductCollectionSortKeys
-        $reverse: Boolean
-    ) {
-        collection(handle: $handle) {
-            products(sortKey: $sortKey, reverse: $reverse, first: 100) {
-                edges {
-                    node {
-                        ...product
-                    }
-                }
-            }
+export const getCollectionProductsQuery = /* GraphQL */ `
+  query getCollectionProducts(
+    $handle: String!
+    $sortKey: ProductCollectionSortKeys
+    $reverse: Boolean
+  ) {
+    collection(handle: $handle) {
+      products(sortKey: $sortKey, reverse: $reverse, first: 100) {
+        edges {
+          node {
+            ...product
+          }
         }
+      }
     }
-    ${productFragment}
+  }
+  ${productFragment}
 `;
