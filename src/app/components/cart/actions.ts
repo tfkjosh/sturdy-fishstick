@@ -1,3 +1,5 @@
+"use server";
+
 import { TAGS } from "@/app/lib/constants";
 import { addToCart } from "@/app/lib/shopify";
 import { revalidateTag } from "next/cache";

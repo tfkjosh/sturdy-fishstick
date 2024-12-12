@@ -170,6 +170,15 @@ export type Menu = {
     totalQuantity: number;
   };
 
+  export type ShopifyCartOperation = {
+    data: {
+      cart: ShopifyCart;
+    }
+    variables: {
+      cartId: string;
+    }
+  }
+
   export type Cart = Omit<ShopifyCart, "lines"> & {
     lines: CartItem[];
 };

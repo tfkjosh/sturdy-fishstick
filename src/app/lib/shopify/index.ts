@@ -7,6 +7,7 @@ import {
     Product, 
     ShopifyAddToCartOperation, 
     ShopifyCart, 
+    ShopifyCartOperation, 
     ShopifyCollection, 
     ShopifyCollectionProductsOperation, 
     ShopifyCollectionsOperation, 
@@ -20,9 +21,10 @@ import { getMenuQuery } from "./queries/menu";
 import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from "../constants";
 import { ensureStartWith } from "../utils";
 import { isShopifyError } from "../type-guards";
-import { getProductQuery, getProductRecommendationsQuery } from "./queries/products";
+import { getProductQuery, getProductRecommendationsQuery } from "./queries/product";
 import { getCollectionProductsQuery, getCollectionsQuery } from "./queries/collection";
 import { addToCartMutation } from "./mutations/cart";
+import { getCartQuery } from "./queries/cart";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
     ? ensureStartWith(process.env.SHOPIFY_STORE_DOMAIN, "https://") 
@@ -278,11 +280,13 @@ export async function getProduct(handle:string): Promise<Product | undefined> {
             handle,
         },
     });
-
+    console.log("getProduct", res.body.data.product);
     return reshapeProduct(res.body.data.product, false);
 }
 
-export async function getProductRecommendations(productId: string): Promise<Product[]> {
+export async function getProductRecommendations(
+    productId: string
+): Promise<Product[]> {
     const res = await shopifyFetch<ShopifyProductRecommendationsOperation>({
         query: getProductRecommendationsQuery,
         tags: [TAGS.products],
@@ -324,3 +328,16 @@ export async function addToCart(
     return reshapeCart(res.body.data.cartLinesAdd.cart)
 }
 
+export async function getCart(
+    cartId: string | undefined
+): Promise<Cart | undefined> {
+    if(!cartId) {
+        return undefined;
+    }
+
+    const res = shopifyFetch<ShopifyCartOperation>({
+        query: getCartQuery,
+        variables: { cartId },
+        tags: [TAGS.cart]
+    })
+}
