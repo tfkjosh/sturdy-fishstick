@@ -39,14 +39,14 @@ export async function Navbar() {
                             </Link>
                         </li>
                     ))}
-                        </ul>
-                    ) : null}
+                    </ul>
+                ) : null}
                 </div>
                 <div className="hidden justify-center md:flex md:w--1/3">
                     <Search />
                 </div>
                 <div className="flex justify-end md:w-1/3">
-                    { /*<CartModal /> */}
+                    <CartModal />
                 </div>
             </div>
         </nav>
