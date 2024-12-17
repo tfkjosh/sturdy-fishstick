@@ -4,6 +4,7 @@ import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
 import LogoSquare from "../../logo-square";
+import CartModal from "../../cart/modal";
 
 export async function Navbar() {
     const menu = await getMenu("nextjs-frontend-menu");
