@@ -20,4 +20,4 @@ export default function LogoSquare({ size }: { size?: "sm" | undefined }) {
       />
     </div>
   );
-} 
+}

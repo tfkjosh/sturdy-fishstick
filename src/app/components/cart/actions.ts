@@ -1,12 +1,13 @@
 "use server";
 
+
 import { TAGS } from "@/app/lib/constants";
 import { 
-    addToCart, 
-    createCart, 
-    getCart, 
-    removeFromCart, 
-    updateCart
+  addToCart, 
+  createCart, 
+  getCart, 
+  removeFromCart, 
+  updateCart 
 } from "@/app/lib/shopify";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
