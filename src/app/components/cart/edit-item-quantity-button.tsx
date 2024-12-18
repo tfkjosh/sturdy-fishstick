@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { useFormState } from "react-dom";
 import { updateItemQuantity } from "./actions";
 
-
 function SubmitButton({ type }: { type: "plus" | "minus" }) {
   return (
     <button

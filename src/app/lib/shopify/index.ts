@@ -1,34 +1,56 @@
-import { 
-    Cart,
-    Collection,
-    Connection, 
-    Image, 
-    Menu, 
-    Product, 
-    ShopifyAddToCartOperation, 
-    ShopifyCart, 
-    ShopifyCartOperation, 
-    ShopifyCollection, 
-    ShopifyCollectionProductsOperation, 
-    ShopifyCollectionsOperation, 
-    ShopifyCreateCartOperation, 
-    ShopifyMenuOperation, 
-    ShopifyProduct, 
-    ShopifyProductOperation, 
-    ShopifyProductRecommendationsOperation, 
-    ShopifyProductsOperation,
-    ShopifyRemoveFromCartOperation,
-    ShopifyUpdateCartOperation, 
-    
-} from "./types";
-import { getMenuQuery } from "./queries/menu";
-import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from "../constants";
-import { ensureStartWith } from "../utils";
+import { NextRequest, NextResponse } from "next/server";
+import {
+  HIDDEN_PRODUCT_TAG,
+  SHOPIFY_GRAPHQL_API_ENDPOINT,
+  TAGS,
+} from "../constants";
 import { isShopifyError } from "../type-guards";
-import { getProductQuery, getProductRecommendationsQuery, getProductsQuery } from "./queries/product";
-import { getCollectionProductsQuery, getCollectionsQuery } from "./queries/collection";
-import { addToCartMutation, createCartMutation, editCartItemsMutation, removeFromCartMutation } from "./mutations/cart";
+import { ensureStartWith } from "../utils";
+import {
+  addToCartMutation,
+  createCartMutation,
+  editCartItemsMutation,
+  removeFromCartMutation,
+} from "./mutations/cart";
 import { getCartQuery } from "./queries/cart";
+import {
+  getCollectionProductsQuery,
+  getCollectionsQuery,
+} from "./queries/collection";
+import { getMenuQuery } from "./queries/menu";
+import {
+  getProductQuery,
+  getProductRecommendationsQuery,
+  getProductsQuery,
+} from "./queries/product";
+import {
+  Cart,
+  Collection,
+  Connection,
+  Image,
+  Menu,
+  Page,
+  Product,
+  ShopifyAddToCartOperation,
+  ShopifyCart,
+  ShopifyCartOperation,
+  ShopifyCollection,
+  ShopifyCollectionProductsOperation,
+  ShopifyCollectionsOperation,
+  ShopifyCreateCartOperation,
+  ShopifyMenuOperation,
+  ShopifyPageOperation,
+  ShopifyPagesOperation,
+  ShopifyProduct,
+  ShopifyProductOperation,
+  ShopifyProductRecommendationsOperation,
+  ShopifyProductsOperation,
+  ShopifyRemoveFromCartOperation,
+  ShopifyUpdateCartOperation,
+} from "./types";
+import { headers } from "next/headers";
+import { revalidateTag } from "next/cache";
+import { getPageQuery, getPagesQuery } from "./queries/page";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartWith(process.env.SHOPIFY_STORE_DOMAIN, "https://")

@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Price from "./price";
 
-
 export default function Label({
   title,
   amount,

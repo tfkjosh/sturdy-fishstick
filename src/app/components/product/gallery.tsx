@@ -5,7 +5,6 @@ import Image from "next/image";
 import { GridTileImage } from "../grid/tile";
 import { useProduct, useUpdateURL } from "./product-context";
 
-
 export default function Gallery({
   images,
 }: {

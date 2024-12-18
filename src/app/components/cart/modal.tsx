@@ -11,11 +11,12 @@ import OpenCart from "./open-cart";
 import CloseCart from "./close-cart";
 import { DeleteItemButton } from "./delete-item-button";
 import { EditItemQuantityButton } from "./edit-item-quantity-button";
-import { useFormStatus } from "react-dom";
-import { DEFAULT_OPTION } from "@/app/lib/constants";
-import { createUrl } from "@/app/lib/utils";
+
 import LoadingDots from "../loading-dots";
 import { createCartAndSetCookie, redirectToCheckout } from "./actions";
+import { createUrl } from "@/app/lib/utils";
+import { DEFAULT_OPTION } from "@/app/lib/constants";
+import { useFormStatus } from "react-dom";
 
 type MerchandiseSearchParams = {
   [key: string]: string;
