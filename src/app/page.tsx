@@ -26,14 +26,14 @@ export default function Home() {
               </p>
               <div className="flex flex-col w-full md:flex-row gap-2 text-nowrap">
                 <Link
-                  href="/search/womens-collection"
+                  href="/search/womens"
                   className="inline-flex h-9 items-center justify-center rounded-md border bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Women
                 </Link>
                 <Link
-                  href="/search/mens-collection"
+                  href="/search/mens"
                   className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
@@ -77,7 +77,7 @@ export default function Home() {
           <div className="mx-auto grid items-start justify-center gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-4">
             <div className="grid gap-1">
               <Link
-                href="/search/womens-collection"
+                href="/search/womens"
                 className="group"
                 prefetch={false}
               >
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <div className="grid gap-1">
               <Link
-                href="/search/mens-collection"
+                href="/search/mens"
                 className="group"
                 prefetch={false}
               >
