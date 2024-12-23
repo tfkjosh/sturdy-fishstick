@@ -27,21 +27,21 @@ export default function Home() {
               <div className="flex flex-col w-full md:flex-row gap-2 text-nowrap">
                 <Link
                   href="/search/womens"
-                  className="inline-flex h-9 items-center justify-center rounded-md border bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-200 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Women
                 </Link>
                 <Link
                   href="/search/mens"
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-200 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Men
                 </Link>
                 <Link
                   href="/search/sales"
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-300 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-200 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Sales
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
           </div>
           <img
-            src="/banner.png"
+            src="/banner.jpg"
             width="1270"
             height="300"
             alt="Hero"
@@ -77,19 +77,19 @@ export default function Home() {
           <div className="mx-auto grid items-start justify-center gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-4">
             <div className="grid gap-1">
               <Link
-                href="/search/womens"
+                href="/www.wokeupsick.com"
                 className="group"
-                prefetch={false}
+                prefetch={true}
               >
                 <img
-                  src="/womens-collection.png"
+                  src="/wokeupsic.jpg"
                   width="400"
                   height="500"
-                  alt="Women's Collection"
+                  alt="WOKEUPSIC"
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Women&apos;s Collection
+                  WOKEUPSICK ® 
                 </h3>
               </Link>
             </div>
@@ -100,42 +100,42 @@ export default function Home() {
                 prefetch={false}
               >
                 <img
-                  src="/mens-collection.png"
+                  src="/greybrim.jpg"
                   width="400"
                   height="500"
-                  alt="Men's Collection"
+                  alt="GREYBRIMS"
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Men&apos;s Collection
+                  Grey Brims ®
                 </h3>
               </Link>
             </div>
             <div className="grid gap-1">
               <Link href="/search/kids" className="group" prefetch={false}>
                 <img
-                  src="/kids-collection.png"
+                  src="/tres.jpg"
                   width="400"
                   height="500"
                   alt="Kids' Collection"
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Kids&apos;s Collection
+                Très Haute Couture ®
                 </h3>
               </Link>
             </div>
             <div className="grid gap-1">
               <Link href="/search/sales" className="group" prefetch={false}>
                 <img
-                  src="/sales-collection.png"
+                  src="/sknk.jpg"
                   width="400"
                   height="500"
-                  alt="Sale's Collection"
+                  alt="SKNKWEAR"
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Sale&apos;s Collection
+                  Sknkwear ®
                 </h3>
               </Link>
             </div>
@@ -144,16 +144,17 @@ export default function Home() {
       </section>
       <section className="w-full py-12 lg:py-7 bg-[url('/sale-backdrop.svg')] grid place-content-center">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-          <img src="/sale-banner.svg" alt="sale footer banner" />
+          {/* <img src="/sale-banner.svg" alt="sale footer banner" /> */}
           <div className="space-y-3 z-50">
             <div className="bg-white dark:bg-black">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight p-2">
-                Explore Our Sale Collection
+                Explore Top Picks For You
               </h2>
             </div>
             <div className="bg-white">
               <p className="mx-auto max-w-[600px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed p-2">
-                Don&apos;t miss out on our amazing deals and discounts.
+                Stay tuned into amazing artists, podcasts and blog posts  
+                .
               </p>
             </div>
           </div>
