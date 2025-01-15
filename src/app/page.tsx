@@ -1,4 +1,7 @@
 import Link from "next/link";
+import React from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap'
 
 export const metadata = {
   description:
@@ -89,7 +92,7 @@ export default function Home() {
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  WOKEUPSICK ® 
+                  Wokeupsick ® 
                 </h3>
               </Link>
             </div>
@@ -112,7 +115,10 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid gap-1">
-              <Link href="/search/kids" className="group" prefetch={false}>
+              <Link 
+                href="/search/kids" 
+                className="group" 
+                prefetch={false}>
                 <img
                   src="/tres.jpg"
                   width="400"
@@ -126,7 +132,10 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid gap-1">
-              <Link href="/search/sales" className="group" prefetch={false}>
+              <Link 
+                href="/search/sales" 
+                className="group" 
+                prefetch={false}>
                 <img
                   src="/sknk.jpg"
                   width="400"
@@ -144,6 +153,11 @@ export default function Home() {
       </section>
       <section className="w-full py-12 lg:py-7 bg-[url('/sale-backdrop.svg')] grid place-content-center">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+          <Container>
+            <div className="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/TOb9wu3rBsk" title="YouTube video" allowFullScreen></iframe>
+            </div>
+          </Container>
           {/* <img src="/sale-banner.svg" alt="sale footer banner" /> */}
           <div className="space-y-3 z-50">
             <div className="bg-white dark:bg-black">
