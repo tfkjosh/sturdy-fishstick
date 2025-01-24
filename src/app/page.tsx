@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap'
+
 
 export const metadata = {
   description:
@@ -30,21 +30,21 @@ export default function Home() {
               <div className="flex flex-col w-full md:flex-row gap-2 text-nowrap">
                 <Link
                   href="/search/womens"
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-200 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-transparent-200 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Women
                 </Link>
                 <Link
                   href="/search/mens"
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-200 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-transparent-200 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Men
                 </Link>
                 <Link
                   href="/search/sales"
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-red-300 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-red-200 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-transparent-200 border-input bg-background px-10 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   Shop Sales
@@ -80,7 +80,7 @@ export default function Home() {
           <div className="mx-auto grid items-start justify-center gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-4">
             <div className="grid gap-1">
               <Link
-                href="/www.wokeupsick.com"
+                href="https://www.wokeupsick.com/"
                 className="group"
                 prefetch={true}
               >
@@ -92,11 +92,11 @@ export default function Home() {
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
-                  Wokeupsick ® 
+                  WOKEUPSICK ® 
                 </h3>
               </Link>
             </div>
-            <div className="grid gap-1">
+            {/* <div className="grid gap-1">
               <Link
                 href="/search/mens"
                 className="group"
@@ -113,8 +113,8 @@ export default function Home() {
                   Grey Brims ®
                 </h3>
               </Link>
-            </div>
-            <div className="grid gap-1">
+            </div> */}
+            {/* <div className="grid gap-1">
               <Link 
                 href="/search/kids" 
                 className="group" 
@@ -130,10 +130,10 @@ export default function Home() {
                 Très Haute Couture ®
                 </h3>
               </Link>
-            </div>
-            <div className="grid gap-1">
+            </div> */}
+            {/* <div className="grid gap-1">
               <Link 
-                href="/search/sales" 
+                href="https://www.wokeupsick.com/sknkstore" 
                 className="group" 
                 prefetch={false}>
                 <img
@@ -147,7 +147,7 @@ export default function Home() {
                   Sknkwear ®
                 </h3>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -167,20 +167,21 @@ export default function Home() {
             </div>
             <div className="bg-white">
               <p className="mx-auto max-w-[600px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed p-2">
-                Stay tuned into amazing artists, podcasts and blog posts  
+                Stay tuned into amazing artists, podcasts and vlog posts  
                 .
               </p>
             </div>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2 z-50">
             <Link
-              href="#"
-              className="inline-flex h-10 items-center justify-center rounded-md bg-slate-200 dark:bg-black px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              href="https://soundcloud.com/thcphi2083"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-transparent-200 dark:bg-black px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Shop Sale
+              Listen To Music
             </Link>
           </div>
+          
         </div>
       </section>
     </main>

@@ -121,7 +121,7 @@ export default function CartModal() {
                         return (
                           <li
                             key={i}
-                            className="lex w-full flex-col border-b border-neutral-300 dark:border-neutral-700"
+                            className="flex w-full flex-col border-b border-neutral-300 dark:border-neutral-700"
                           >
                             <div className="relative flex w-full flex-row justify-between px-1 py-4">
                               <DeleteItemButton
@@ -231,7 +231,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="block w-full rounded-full bg-gray-100 p-3 text-center text-sm font-medium text-black opacity-90 hover:opacity-100"
+      className="block w-full rounded-full bg-transparent-200 p-3 text-center text-sm font-medium text-black opacity-90 hover:opacity-100"
       type="submit"
       disabled={pending}
     >

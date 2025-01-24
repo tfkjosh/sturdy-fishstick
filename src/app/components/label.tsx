@@ -26,7 +26,7 @@ export default function Label({
           {title}
         </h3>
         <Price
-          className="flex-none rounded-full bg-gray-100 p-2 text-black"
+          className="flex-none rounded-full bg-transparent-100 p-2 text-black"
           amount={amount}
           currencyCode={currencyCode}
           currencyCodeClassName="hidden src[275px]/label:inline"

@@ -6,6 +6,7 @@ import { Navbar } from "./components/layout/navbar";
 import Footer from "./components/layout/footer";
 import { CartProvider } from "./components/cart/cart-context";
 import { getCart } from "./lib/shopify";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
