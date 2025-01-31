@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import Search from "./search";
-import { Menu } from "@/app/lib/shopify/types";
+import { Menu } from "@/lib/shopify/types";
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);

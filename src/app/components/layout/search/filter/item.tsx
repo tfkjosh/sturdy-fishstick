@@ -2,9 +2,9 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { ListItem, type PathFilterItem } from ".";
 import Link from "next/link";
-import { createUrl } from "@/app/lib/utils";
+import { createUrl } from "@/lib/utils";
 import clsx from "clsx";
-import type { SortFilterItem } from "@/app/lib/constants";
+import type { SortFilterItem } from "@/lib/constants";
 
 function PathFilterItem({item}: {item: PathFilterItem}) {
     const pathname = usePathname();

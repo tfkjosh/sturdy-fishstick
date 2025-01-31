@@ -6,9 +6,9 @@ import { GridTileImage } from "../../components/grid/tile";
 import { ProductProvider } from "../../components/product/product-context";
 import Gallery from "../../components/product/gallery";
 import { ProductDescription } from "../../components/product/product-description";
-import { getProduct, getProductRecommendations } from "../../lib/shopify";
-import { HIDDEN_PRODUCT_TAG } from "../../lib/constants";
-import { Image } from "../../lib/shopify/types";
+import { getProduct, getProductRecommendations } from "../../../lib/shopify";
+import { HIDDEN_PRODUCT_TAG } from "../../../lib/constants";
+import { Image } from "../../../lib/shopify/types";
 
 export async function generateMetadata({
   params,

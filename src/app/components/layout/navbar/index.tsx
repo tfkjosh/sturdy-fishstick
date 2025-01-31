@@ -1,8 +1,8 @@
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
-import { getMenu } from "@/app/lib/shopify";
-import { Menu } from "@/app/lib/shopify/types";
+import { getMenu } from "@/lib/shopify";
+import { Menu } from "@/lib/shopify/types";
 import LogoSquare from "../../logo-square";
 import CartModal from "../../cart/modal";
 

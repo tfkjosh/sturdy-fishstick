@@ -1,7 +1,7 @@
 import Grid from "@/app/components/grid";
 import ProductGridItems from "@/app/components/layout/product-grid-items";
-import { defaultSort, sorting } from "@/app/lib/constants";
-import { getCollectionProducts } from "@/app/lib/shopify";
+import { defaultSort, sorting } from "@/lib/constants";
+import { getCollectionProducts } from "@/lib/shopify";
 
 export default async function CategoryPage({
   params,

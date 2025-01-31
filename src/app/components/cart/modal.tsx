@@ -14,8 +14,8 @@ import { EditItemQuantityButton } from "./edit-item-quantity-button";
 
 import LoadingDots from "../loading-dots";
 import { createCartAndSetCookie, redirectToCheckout } from "./actions";
-import { createUrl } from "@/app/lib/utils";
-import { DEFAULT_OPTION } from "@/app/lib/constants";
+import { createUrl } from "@/lib/utils";
+import { DEFAULT_OPTION } from "@/lib/constants";
 import { useFormStatus } from "react-dom";
 
 type MerchandiseSearchParams = {

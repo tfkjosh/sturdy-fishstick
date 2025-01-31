@@ -1,4 +1,4 @@
-import { getCollections } from "@/app/lib/shopify";
+import { getCollections } from "@/lib/shopify";
 import FilterList from "./filter";
 import { Suspense } from "react";
 import clsx from "clsx";
