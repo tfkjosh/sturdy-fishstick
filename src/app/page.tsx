@@ -85,7 +85,7 @@ export default function Home() {
                 prefetch={true}
               >
                 <img
-                  src="/wokeupsic.jpg"
+                  src="/w.png"
                   width="400"
                   height="500"
                   alt="WOKEUPSIC"
