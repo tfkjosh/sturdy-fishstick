@@ -1,4 +1,4 @@
-import Prose from "@/app/components/prose";
+import Prose from "@/components/prose";
 import { getPage } from "@/lib/shopify";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";

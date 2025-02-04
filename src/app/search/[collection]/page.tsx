@@ -1,5 +1,5 @@
-import Grid from "@/app/components/grid";
-import ProductGridItems from "@/app/components/layout/product-grid-items";
+import Grid from "@/components/grid";
+import ProductGridItems from "@/components/layout/product-grid-items";
 import { defaultSort, sorting } from "@/lib/constants";
 import { getCollectionProducts } from "@/lib/shopify";
 

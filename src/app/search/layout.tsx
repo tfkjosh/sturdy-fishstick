@@ -1,5 +1,5 @@
-import Collections from "../components/layout/search/collections";
-import FilterList from "../components/layout/search/filter";
+import Collections from "../../components/layout/search/collections";
+import FilterList from "../../components/layout/search/filter";
 import { sorting } from "../../lib/constants";
 
 
