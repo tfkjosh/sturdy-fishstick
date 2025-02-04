@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react"
 import { Container } from 'react-bootstrap'
@@ -52,7 +53,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <img
+          <Image
             src="/banner.jpg"
             width="1270"
             height="300"
@@ -84,11 +85,11 @@ export default function Home() {
                 className="group"
                 prefetch={true}
               >
-                <img
+                <Image
                   src="/w.png"
                   width="400"
                   height="500"
-                  alt="WOKEUPSIC"
+                  alt="www.wokeupsick.com"
                   className="aspect-[4/5] overflow-hidden rounded-lg object-cover group-hover:scale-105 transition-transform"
                 />
                 <h3 className="mt-4 text-lg font-bold group-hover:underline">
