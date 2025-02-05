@@ -1,10 +1,10 @@
+import { getMenu } from "@/lib/shopify";
+import { Menu } from "@/lib/shopify/types";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
-import { getMenu } from "@/lib/shopify";
-import { Menu } from "@/lib/shopify/types";
-import LogoSquare from "../../logo-square";
-import CartModal from "../../cart/modal";
+import LogoSquare from "@/components/logo-square";
+import CartModal from "@/components/cart/modal";
 
 export async function Navbar() {
   const menu = await getMenu("nextjs-frontend-menu");
