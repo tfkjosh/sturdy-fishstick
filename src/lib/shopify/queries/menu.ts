@@ -3,7 +3,6 @@ export const getMenuQuery = /* GraphQL */ `
     menu(handle: $handle) {
       items {
         title
-        url
       }
     }
   }
