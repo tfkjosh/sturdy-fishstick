@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react"
-import { Container } from 'react-bootstrap'
-
+import { Container, Button, Row, Col } from 'react-bootstrap'
 
 export const metadata = {
   description:
@@ -156,7 +155,7 @@ export default function Home() {
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <Container>
             <div className="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/TOb9wu3rBsk" title="YouTube video" allowFullScreen></iframe>
+              <iframe className="" src="https://www.youtube.com/embed/TOb9wu3rBsk" title="YouTube video" allowFullScreen></iframe>
             </div>
           </Container>
           {/* <img src="/sale-banner.svg" alt="sale footer banner" /> */}
@@ -179,7 +178,7 @@ export default function Home() {
               className="inline-flex h-10 items-center justify-center rounded-md bg-transparent-200 dark:bg-black px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Listen To Music
+            ၊||၊|။||||။၊|။
             </Link>
           </div>
           
