@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react"
-import { Container, Button, Row, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 export const metadata = {
   description:
