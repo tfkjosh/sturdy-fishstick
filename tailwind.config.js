@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        videoBg: "url('/videoBg.gif')"
+      },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
       },
