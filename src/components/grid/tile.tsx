@@ -20,7 +20,7 @@ export function GridTileImage({
   return (
       <div
         className={clsx(
-          "group flex h-full w-full items-center justify-center overflow-hidden bg-[rgb(255,255,255)] hover:border-blue-600 dark:bg-black",
+          "group flex h-full w-full items-center justify-center overflow-hidden bg-transparent hover:border-blue-600 dark:bg-black",
           {
             relative: label,
             "": active,
@@ -39,7 +39,7 @@ export function GridTileImage({
         ) : null}
         {label ? (
           <Label
-            title={label.title}
+            // title={label.title}
             // amount={label.amount}
             currencyCode={label.currencyCode}
             position={label.position}

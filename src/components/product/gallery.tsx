@@ -6,6 +6,7 @@ import { GridTileImage } from "../grid/tile";
 import { useProduct, useUpdateURL } from "./product-context";
 
 export default function Gallery({
+  
   images,
 }: {
   images: { src: string; altText: string }[];

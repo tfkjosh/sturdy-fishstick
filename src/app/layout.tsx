@@ -7,6 +7,7 @@ import { CartProvider } from "@/components/cart/cart-context";
 import { cookies } from "next/headers";
 import { getCart } from "@/lib/shopify";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FloatingMusicWidget from "@/components/AudioPlayer";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,11 +27,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CartProvider cartPromise={cart}>
-          <Navbar />
-          {children}
-          <Footer />
-        </CartProvider>
+        <section className="">
+          <CartProvider cartPromise={cart}>
+            <Navbar />
+            <FloatingMusicWidget />
+            {children}
+            <Footer />
+          </CartProvider>
+          </section>
       </body>
     </html>
   );

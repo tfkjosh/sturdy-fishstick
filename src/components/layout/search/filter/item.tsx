@@ -17,7 +17,7 @@ function PathFilterItem({item}: {item: PathFilterItem}) {
 
     return (
         <li 
-            className="mt-2 flex text-black font-extralight dark:text-white" 
+            className="mt-2 flex text-white font-sans dark:text-white" 
             key={item.title}
             >
                 <DynamicTag 
@@ -48,7 +48,7 @@ function SortFilterItem({item}: {item: SortFilterItem}) {
 
     return (
         <li 
-            className="mt-2 flex text-black font-extralight dark:text-white" 
+            className="mt-2 flex text-white font-sans dark:text-white" 
             key={item.title}
         >
             <DynamicTag

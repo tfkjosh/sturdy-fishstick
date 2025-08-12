@@ -2,12 +2,12 @@ import clsx from "clsx";
 import Price from "./price";
 
 export default function Label({
-  title,
+  // title,
   // amount,
   currencyCode,
   position = "bottom",
 }: {
-  title: string;
+  // title: string;
   // amount: string;
   currencyCode: string;
   position?: "bottom" | "center";
@@ -23,7 +23,7 @@ export default function Label({
     >
       <div className="">
         <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none font-extrabold font-mono tracking-tight">
-          {title}
+          {/* {title} */}
         </h3>
         {/* <Price
           className="flex-none rounded-full bg-white p-1 text-xl text-black font-bold font-mono"
