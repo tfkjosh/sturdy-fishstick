@@ -213,7 +213,7 @@ export default function CartModal() {
                       />
                     </div>
                   </div>
-                  <form onSubmit={redirectToCheckout}>
+                  <form action={redirectToCheckout}>
                     <CheckoutButton />
                   </form>
                 </div>

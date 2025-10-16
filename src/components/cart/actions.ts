@@ -109,16 +109,16 @@ export async function removeItem(prevState: any, merchandiseId: string) {
 }
 
 export async function redirectToCheckout() {
-  let cartId = cookies().get("cartId")?.value;
+  const cartId = cookies().get("cartId")?.value;
 
   if (!cartId) {
-    return "Missing cart ID";
+    throw new Error ("Missing cart ID");
   }
 
-  let cart = await getCart(cartId);
+  const cart = await getCart(cartId);
 
   if (!cart) {
-    return "Error fetching cart";
+    throw new Error ("Error fetching cart");
   }
 
   redirect(cart.checkoutUrl);
