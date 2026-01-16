@@ -3,20 +3,21 @@ import { Menu } from "@/lib/shopify/types";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
+import Logo from "@/components/icons/logo"
 import LogoSquare from "@/components/logo-square";
 import CartModal from "@/components/cart/modal";
 
 export async function Navbar() {
   const menu = await getMenu("nextjs-frontend-menu");
   return (
-    <nav className="flex items-center justify-between p-4 lg:px-6 sticky top-0 backdrop-blur-sm z-[999]">
+    <nav className="flex items-center justify-between p-4 lg:px-6 top-0 backdrop-blur-sm z-[999]">
       <div className="block flex-none md:hidden">
         <MobileMenu menu={menu} />
       </div>
       <div className="flex w-full items-center">
         <div className="flex w-full md:w-1/3">
           <Link
-            href={"/"}
+            href={"/about"}
             prefetch={true}
             className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
           >
@@ -33,7 +34,7 @@ export async function Navbar() {
                   <Link
                     href={item.path}
                     prefetch={true}
-                    className="text-gray-700 underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
+                    className="text-gray-950 underline-offset-4 hover:text-black font-normal hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
                   >
                     {item.title}
                   </Link>

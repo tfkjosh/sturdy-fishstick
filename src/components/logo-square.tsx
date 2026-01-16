@@ -1,23 +1,26 @@
 import clsx from "clsx";
 import LogoIcon from "./icons/logo";
 
-export default function LogoSquare({ size }: { size?: "sm" | undefined }) {
+interface CircleProps {
+  isActive?: boolean;
+}
+
+const Circle: React.FC<CircleProps> = ({ isActive }) => {
   return (
     <div
       className={clsx(
-        "flex flex-none items-center justify-center border border-neutral-200 bg-white",
-        {
-          "h-[40px] w-[40px] rounded-xl": !size,
-          "h-[30px] w-[30px] rounded-lg": size === "sm",
-        }
+        "w-10 h-10 flex items-center justify-center rounded-full border-4",
+        isActive ? "border-blue-500 bg-blue-500" : "border-black "
       )}
     >
-      {/* <LogoIcon
+      <LogoIcon
         className={clsx({
-          "h-[16px] w-[16px]": !size,
-          "h-[10px] w-[10px]": size === "sm",
+          "h-[16px] w-[16px]": isActive,
+          "h-[10px] w-[10px]": !isActive
         })}
-      /> */}
+      />
     </div>
   );
-}
+};
+
+export default Circle;

@@ -56,6 +56,7 @@ export default async function ProductPage({
   const product = await getProduct(params.handle);
   if (!product) return notFound();
   return (
+    
     <ProductProvider>
       <div className="mx-auto max-w-screen-2xl px-4">
         <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
@@ -79,13 +80,13 @@ export default async function ProductPage({
             </Suspense>
           </div>
         </div>
-        <RelatedPRoducts id={product.id} />
+        <RelatedProducts id={product.id} />
       </div>
     </ProductProvider>
   );
 }
 
-async function RelatedPRoducts({ id }: { id: string }) {
+async function RelatedProducts({ id }: { id: string }) {
   const relatedProducts = await getProductRecommendations(id);
 
   if (!relatedProducts) return null;

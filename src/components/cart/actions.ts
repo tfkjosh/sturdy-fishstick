@@ -1,15 +1,15 @@
 "use server";
 
 import { TAGS } from "@/lib/constants";
-import { 
-  addToCart, 
-  createCart, 
-  getCart, 
-  removeFromCart, 
-  updateCart 
+import {
+  addToCart,
+  createCart,
+  getCart,
+  removeFromCart,
+  updateCart,
 } from "@/lib/shopify";
 import { revalidateTag } from "next/cache";
-import { cookies } from "next/headers";
+import { cookies } from "next/headers"; 
 import { redirect } from "next/navigation";
 
 export async function addItem(
@@ -109,16 +109,16 @@ export async function removeItem(prevState: any, merchandiseId: string) {
 }
 
 export async function redirectToCheckout() {
-  let cartId = cookies().get("cartId")?.value;
+  const cartId = cookies().get("cartId")?.value;
 
   if (!cartId) {
-    return "Missing cart ID";
+    throw new Error ("Missing cart ID");
   }
 
-  let cart = await getCart(cartId);
+  const cart = await getCart(cartId);
 
   if (!cart) {
-    return "Error fetching cart";
+    throw new Error ("Error fetching cart");
   }
 
   redirect(cart.checkoutUrl);
